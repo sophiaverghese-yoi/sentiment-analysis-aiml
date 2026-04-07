@@ -14,7 +14,6 @@ sentiment_analysis_project/
 ├── app_cli.py
 ├── app_web.py
 ├── vercel.json
-├── .python-version
 ├── run_all.ps1
 ├── requirements.txt
 ├── requirements-local.txt
@@ -163,7 +162,6 @@ Optional custom values:
 This repository includes a Vercel-ready Python serverless entrypoint:
 - `api/index.py`
 - `vercel.json`
-- `.python-version` (pins Python 3.11)
 
 For Vercel deploys, keep runtime dependencies in `requirements.txt`.
 For full local development (CLI + Streamlit + visualization), use `requirements-local.txt`.

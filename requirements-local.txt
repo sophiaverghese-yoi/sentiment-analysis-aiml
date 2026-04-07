@@ -1,5 +1,9 @@
 pandas
 numpy
 scikit-learn
+matplotlib
+seaborn
+wordcloud
 joblib
+streamlit
 flask

@@ -14,8 +14,10 @@ sentiment_analysis_project/
 ├── app_cli.py
 ├── app_web.py
 ├── vercel.json
+├── .python-version
 ├── run_all.ps1
 ├── requirements.txt
+├── requirements-local.txt
 ├── README.md
 ├── api/
 │   └── index.py
@@ -99,7 +101,7 @@ source .venv/bin/activate
 ### 3) Install dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-local.txt
 ```
 
 ### 4) Train model
@@ -161,6 +163,10 @@ Optional custom values:
 This repository includes a Vercel-ready Python serverless entrypoint:
 - `api/index.py`
 - `vercel.json`
+- `.python-version` (pins Python 3.11)
+
+For Vercel deploys, keep runtime dependencies in `requirements.txt`.
+For full local development (CLI + Streamlit + visualization), use `requirements-local.txt`.
 
 After importing the GitHub repository in Vercel, deploy normally.  
 The API routes are:

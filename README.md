@@ -13,9 +13,12 @@ It includes data preprocessing, model training/evaluation, prediction APIs, CLI 
 sentiment_analysis_project/
 ├── app_cli.py
 ├── app_web.py
+├── vercel.json
 ├── run_all.ps1
 ├── requirements.txt
 ├── README.md
+├── api/
+│   └── index.py
 ├── data/
 │   └── sample_sentiment.csv
 ├── artifacts/                  # generated after training
@@ -151,6 +154,39 @@ Optional custom values:
 
 ```powershell
 .\run_all.ps1 -Dataset "data/sample_sentiment.csv" -Port 8502
+```
+
+### 9) Deploy on Vercel (API)
+
+This repository includes a Vercel-ready Python serverless entrypoint:
+- `api/index.py`
+- `vercel.json`
+
+After importing the GitHub repository in Vercel, deploy normally.  
+The API routes are:
+
+- `GET /` health/info
+- `POST /api/predict` with JSON body:
+
+```json
+{
+  "text": "I absolutely love this!"
+}
+```
+
+Example response:
+
+```json
+{
+  "input_text": "I absolutely love this!",
+  "clean_text": "absolutely love",
+  "sentiment": "positive",
+  "confidence": {
+    "negative": 0.2031,
+    "neutral": 0.2882,
+    "positive": 0.5087
+  }
+}
 ```
 
 ---
